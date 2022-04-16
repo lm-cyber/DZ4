@@ -21,6 +21,10 @@ public class Main {
             }
             System.out.println();
         }
+        for (String str: Family.find(matrixOfIntersection)) {
+            System.out.println(str);
+
+        }
     }
     public static String prob(int i)
     {
