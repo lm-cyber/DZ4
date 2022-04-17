@@ -1,7 +1,39 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] arg) {
         Matrix matrix = new Matrix();
-        int[] count = matrix.count();
+
+
+        List<Integer> test = matrix.findGamiltonCikl();
+        for (Integer integer :  test) {
+            Integer p = integer+1 ;
+            System.out.print(prob(p.toString().length(),3)+p );
+        }
+        System.out.println();
+        for(Integer i = 0 ; i< 12 ;i++){
+            Integer p = i+1 ;
+            System.out.print( prob(p.toString().length(),3)+p);
+        }
+        System.out.println();
+        System.out.println();
+         for(int i = 0;i<12;i++) {
+            for (int j =0 ;j<12;j++) {
+                System.out.print(Matrix.matrix[i][j]+" ");
+
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+        Matrix.changeMatrix();
+         for(int i = 0;i<12;i++) {
+            for (int j =0 ;j<12;j++) {
+                System.out.print(Matrix.newMatrix[i][j]+" ");
+
+            }
+            System.out.println();
+        }
         MatrixOfIntersection matrixOfIntersection = matrix.matrixOfIntersection();
         String[] strings = matrixOfIntersection.names;
         int max = matrix.kol();
@@ -21,10 +53,6 @@ public class Main {
             }
             System.out.println();
         }
-        for (String str: Family.find(matrixOfIntersection)) {
-            System.out.println(str);
-
-        }
     }
     public static String prob(int i)
     {
@@ -34,5 +62,17 @@ public class Main {
             i++;
         }
         return s;
+    }
+    public static String prob(int i,int probs)
+    {
+        String s="";
+        while (i!=probs){
+            s+=" ";
+            i++;
+        }
+        return s;
+    }
+    public static void test(Integer i ) {
+        i++;
     }
 }
